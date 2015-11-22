@@ -1,0 +1,46 @@
+﻿@section Scripts
+{
+    <script data-main="../js/main" src="../js/require.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+
+        })
+    </script>
+}
+<div id="myApp" class="container">
+    <div id="content" class="row"></div>
+</div>
+
+<script type="text/javascript">
+
+    //function submitCustomLogin() {
+    //    var email = $("#userCustomEmail").val();
+    //    var password = $("#userCustomPassword").val();
+    //    console.log("email: " + email);
+    //    console.log("password: " + password);
+
+    //    window.location.href = '#loginCustom?email=' + email + '&password=' + password;
+    //}
+
+    //function getParameterByName(name) {
+    //    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    //    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    //        results = regex.exec(location.search);
+    //    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    //}
+
+    $(function () {
+        $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
+            options.crossDomain = {
+                crossDomain: true
+            };
+            options.xhrFields = {
+                withCredentials: true
+            };
+        });
+    });
+</script>
+
+
+
