@@ -21,9 +21,6 @@ define([
             $.when(user.fetch()).done(function () {
                 Declaration.MyApp.AppController.showUserInfo(user.get("id"));
             });
-
-            //test@test.com
-            //temp
         }
     });
 

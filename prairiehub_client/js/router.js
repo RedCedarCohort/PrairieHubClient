@@ -4,14 +4,12 @@ define([
     , 'backbone'
     , 'declaration'
     , 'controller'
-    , 'models/CustomUserModel'
-], function ($, _, Backbone, Declaration, Controller, CustomUserModel) {
+], function ($, _, Backbone, Declaration, Controller) {
 
     var Router = Backbone.Router.extend({
         routes: {
             '': 'showIndex'
             , 'login': 'showLogin'
-            , 'loginCustom': 'performLogin'
             , 'showUser/:id': 'showUserInfo'
         }
         , showIndex: function () {

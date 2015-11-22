@@ -16,6 +16,7 @@ define([
     Declaration.MyApp.addInitializer(function () {
         Declaration.MyApp.addRegions({
             contentRegion: "#content"
+            , userTribeRegion: "#userTribes"
         });
 
         Declaration.MyApp.AppController = new AppController();

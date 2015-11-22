@@ -4,15 +4,14 @@ define([
     'backbone'
 ], function ($, _, Backbone) {
 
-    var CustomUserModel = Backbone.Model.extend({
+    var UserTribesModel = Backbone.Model.extend({
         url: function () {
-            return "http://10.185.0.87:5000/login/custom/" + this.get("email") + "/" + this.get("pwd");
+            return "http://10.185.0.87:5000/api/user/" + this.get("id") + "/tribes";
         }
         , defaults: {
             id: ""
         }
-        
     });
     
-    return CustomUserModel;
+    return UserTribesModel;
 });
