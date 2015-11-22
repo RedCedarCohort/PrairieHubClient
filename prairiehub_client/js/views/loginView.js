@@ -1,4 +1,4 @@
-﻿define([
+define([
     'jquery',
     'underscore',
     'backbone',
@@ -17,10 +17,9 @@
             var email = $("#userCustomEmail").val();
             var pwd = $("#userCustomPassword").val();
             var user = new CustomUserModel({ "email": email, "pwd": pwd });
-            console.log(user);
 
             $.when(user.fetch()).done(function () {
-                console.log(user);
+                Declaration.MyApp.AppController.showUserInfo(user.get("id"));
             });
 
             //test@test.com

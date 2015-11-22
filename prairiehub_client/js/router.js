@@ -12,6 +12,7 @@ define([
             '': 'showIndex'
             , 'login': 'showLogin'
             , 'loginCustom': 'performLogin'
+            , 'showUser/:id': 'showUserInfo'
         }
         , showIndex: function () {
             console.log("router: showIndex");
@@ -20,6 +21,10 @@ define([
         , showLogin: function () {
             console.log("router: showLogin");
             Declaration.MyApp.AppController.showLogin(); 
+        }
+        , showUserInfo: function(id){
+            console.log("router: showUser");
+            Declaration.MyApp.AppController.showUserInfo(id);
         }
     });
 

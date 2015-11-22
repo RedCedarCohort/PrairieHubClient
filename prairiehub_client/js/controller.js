@@ -1,17 +1,20 @@
-﻿define([
+define([
             'jquery'
             , 'underscore'
             , 'backbone'
             , 'marionette'
             , 'declaration'
+            , 'models/userInfoModel'
             , 'views/loginView'
             , 'views/homeView'
-            , 'views/loginSuccessView'
+            , 'views/userInfoView'
 ], function (
                 $, _, Backbone, Marionette
                 , Declaration
+                , UserInfo
                 , LoginView
                 , HomeView
+                , UserInfoView
             ) {
 
     var AppController = Marionette.Object.extend({
@@ -26,9 +29,13 @@
             console.log("Controller: showLogin");
             Declaration.MyApp.contentRegion.show(new LoginView());
         },
-        showLoginSuccess: function () {
-            console.log("Controller: performLogin");
-            Declaration.MyApp.contentRegion.show(new LoginSuccess());
+        showUserInfo: function (id) {
+            console.log("Controller: showUserInfo");
+            var user = new UserInfo({"id":id});
+            $.when(user.fetch()).done(function(){
+                console.log(user);
+                Declaration.MyApp.contentRegion.show(new UserInfoView({ model: user }));
+            });
         }
     });
 
