@@ -13,7 +13,5 @@ define([
                 , AppInitilizer
             ) {
 
-    console.log("app.js");
-    
     Declaration.MyApp.start();
 });

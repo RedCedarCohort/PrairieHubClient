@@ -14,7 +14,6 @@ define([
             ) {
 
     Declaration.MyApp.addInitializer(function () {
-        console.log("initializer");
         Declaration.MyApp.addRegions({
             contentRegion: "#content"
         });

@@ -18,9 +18,6 @@
     <!-- GOOGLE FONT-->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700italic,700,500&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!-- /GOOGLE FONT-->	
-    
-    
-
 
     <!--[if lt IE 7]>
 	   <link href="assets/css/font-awesome-ie7.min.css" rel="stylesheet">
@@ -66,6 +63,25 @@
             $(function (){ 
                 console.log("started...");
             });
+            
+            (function() {
+
+              var proxiedSync = Backbone.sync;
+
+              Backbone.sync = function(method, model, options) {
+                options || (options = {});
+
+                if (!options.crossDomain) {
+                  options.crossDomain = true;
+                }
+
+                if (!options.xhrFields) {
+                  options.xhrFields = {withCredentials:true};
+                }
+
+                return proxiedSync(method, model, options);
+              };
+            })();
         </script>
     </body>
 </html>

@@ -31,5 +31,4 @@ require.config({
 
 require([ 'app', 'backbone', 'router']
     , function (App, Backbone, Router) {
-        console.log("stuff...");
     });
