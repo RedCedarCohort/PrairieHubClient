@@ -13,7 +13,6 @@
         , events: {
             "click #btnCustomLogin": "login"
         }
-
         , login: function(){
             var email = $("#userCustomEmail").val();
             var pwd = $("#userCustomPassword").val();
